@@ -1,5 +1,4 @@
-import { useState } from "react";
-import technologiesData from "../data/technology.json";
+import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -21,13 +20,42 @@ type Technology = {
   badge: string;
 };
 
-const technologies = technologiesData as Technology[];
-
 const Technologies = () => {
+  const [technologies, setTechnologies] = useState<Technology[]>([]);
   const [stack, setStack] = useState<Technology[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchTechnologies = async () => {
+      try {
+        const response = await fetch("/data/technology.json");
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch technologies");
+        }
+
+        const data: Technology[] = await response.json();
+
+        setTechnologies(data);
+      } catch (error) {
+        console.log("Error loading technology: ", error);
+        toast.error("Failed to load technologies");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTechnologies();
+  }, []);
+
+  const isAdded = (id: string) => {
+    return stack.some((item) => item.id === id);
+  };
 
   const addToStack = (technology: Technology) => {
-    const alreadyAdded = stack.some((item) => item.id === technology.id);
+    const alreadyAdded = stack.some(
+      (item) => item.id === technology.id
+    );
 
     if (alreadyAdded) {
       toast.warning(`${technology.name} is already in your stack!`);
@@ -40,16 +68,34 @@ const Technologies = () => {
   };
 
   const removeFromStack = (id: string) => {
+    const removedItem = stack.find((item) => item.id === id);
+
     setStack((prev) => prev.filter((item) => item.id !== id));
+
+    if (removedItem) {
+      toast.info(`${removedItem.name} removed from your stack`);
+    }
   };
 
   const removeAll = () => {
+    if (stack.length === 0) {
+      return;
+    }
+
     setStack([]);
+
+    toast.info("All technologies removed from your stack");
   };
 
-  const isAdded = (id: string) => {
-    return stack.some((item) => item.id === id);
-  };
+  if (loading) {
+    return (
+      <section className="py-20 text-center">
+        <p className="text-lg font-medium text-gray-500">
+          Loading technologies...
+        </p>
+      </section>
+    );
+  }
 
   return (
     <>

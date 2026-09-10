@@ -79,9 +79,9 @@ const NavBar = () => {
             Sign In
           </button>
 
-          <button className="rounded-full hover:bg-black px-4 py-2 text-[15px] font-medium text-white bg-fuchsia-600 sm:px-5">
-            Sign Up
-          </button>
+          <button className="rounded-md bg-linear-to-r from-[#ff641f] to-[#e92d87] px-4 py-2 text-[15px] font-medium text-white transition hover:opacity-90">
+              Sign Up
+            </button>
         </div>
       </div>
 
