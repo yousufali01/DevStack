@@ -60,6 +60,7 @@ const Technologies = () => {
         newestOnTop
         closeOnClick
         pauseOnHover
+        toastClassName="!bg-linear-to-r !from-[#ff5a2f] !via-[#e62e7b] !to-[#8b2be2] !text-white"
       />
 
       <section
@@ -76,7 +77,7 @@ const Technologies = () => {
               </span>
             </h1>
 
-            <p className="mt-1 text-[11] text-[#64748b]">
+            <p className="mt-3 text-[15px] text-[#64748b]">
               Pick one technology per category to build your ideal stack.
             </p>
           </div>
@@ -91,7 +92,7 @@ const Technologies = () => {
                 return (
                   <div
                     key={technology.id}
-                    className={`p-9 flex min-h-[168px] flex-col rounded-xl border bg-white p-3 shadow-[0_2px_8px_rgba(15,23,42,0.04)] transition hover:-translate-y-0.5 hover:shadow-[0_5px_18px_rgba(15,23,42,0.08)] ${
+                    className={`p-3 flex min-h-42 flex-col rounded-xl border bg-white  shadow-[0_2px_8px_rgba(15,23,42,0.04)] transition hover:-translate-y-0.5 hover:shadow-[0_5px_18px_rgba(15,23,42,0.08)] ${
                       added ? "border-[#22c55e]" : "border-[#e9edf2]"
                     }`}
                   >
@@ -144,7 +145,7 @@ const Technologies = () => {
                     </h3>
 
                     {/* Description */}
-                    <p className="mt-2 mb-8 line-clamp-2 min-h-[28px] text-[11] leading-[1.45] text-[#7a8798]">
+                    <p className="mt-2 mb-8 line-clamp-2 min-h-7 text-[15px] leading-[1.45] text-[#7a8798]">
                       {technology.description}
                     </p>
 
@@ -169,7 +170,7 @@ const Technologies = () => {
                       <button
                         onClick={() => addToStack(technology)}
                         disabled={added}
-                        className={`w-full mt-5 rounded-md px-2 py-1.5 text-[15px] font-medium transition ${
+                        className={`w-full  mb-5 mt-5 rounded-md px-2 py-1.5 text-[15px] font-medium transition ${
                           added
                             ? "cursor-not-allowed bg-[#e8f7ee] text-[#16a34a]"
                             : "bg-[#111827] text-white hover:bg-[#1f2937]"
@@ -201,7 +202,7 @@ const Technologies = () => {
               <div className="space-y-2">
                 {stack.length === 0 ? (
                   <div className="rounded-lg border border-dashed border-[#e5e7eb] px-3 py-8 text-center">
-                    <p className="text-[10] text-[#94a3b8]">
+                    <p className="text-[15px] text-[#94a3b8]">
                       No technologies selected yet.
                     </p>
 

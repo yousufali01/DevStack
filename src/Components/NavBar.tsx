@@ -1,6 +1,6 @@
 import { useState } from "react";
 import logo from "../assets/Logo.png";
-import Logo from "../assets/logo-text.png"
+import Logo from "../assets/logo-text.png";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,7 +8,6 @@ const NavBar = () => {
   return (
     <nav className="sticky top-0 z-50 w-full bg-white shadow-sm">
       <div className="mx-auto flex h-16 w-[90%] items-center justify-between px-4 md:h-20 md:px-8">
-        {/* <div className="mx-auto flex h-16 w-[calc(100%-40px)] max-w-none items-center justify-between md:h-20"></div> */}
         {/* =========================
             LEFT - Hamburger + Brand
         ========================== */}
@@ -26,8 +25,6 @@ const NavBar = () => {
 
           {/* Brand */}
           <a href="#home" className="flex items-center gap-2">
-
-            
             <img
               src={Logo}
               alt="Dev Stack Logo"
@@ -41,10 +38,7 @@ const NavBar = () => {
         ========================== */}
 
         <div className="hidden items-center gap-8 md:flex ">
-          <a
-            href="#home"
-            className="text-[17px] font-medium text-purple-600"
-          >
+          <a href="#home" className="text-[17px] font-medium text-purple-600">
             Home
           </a>
 
