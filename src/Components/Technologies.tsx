@@ -295,20 +295,20 @@ const Technologies = () => {
         id="technologies"
         className=" w-full bg-white px-4 py-16 sm:px-6 lg:px-8"
       >
-        <div className="mx-auto max-w-[90%]">
-          {/* Section Header */}
-          <div className="mb-7 ">
-            <h1 className="text-[42px] font-extrabold leading-[1.05] tracking-[-1.5px] text-[#111827] sm:text-[48px] md:text-[52px]">
-              Explore the{" "}
-              <span className="bg-linear-to-r from-[#ff5a2f] via-[#e62e7b] to-[#8b2be2] bg-clip-text text-transparent">
-                Technologies
-              </span>
-            </h1>
+  <div className="mx-auto max-w-[90%]">
+  {/* Section Header */}
+  <div className="mb-7 text-center sm:text-left">
+    <h1 className="text-[42px] font-extrabold leading-[1.05] tracking-[-1.5px] text-[#111827] sm:text-[48px] md:text-[52px]">
+      Explore the{" "}
+      <span className="bg-linear-to-r from-[#ff5a2f] via-[#e62e7b] to-[#8b2be2] bg-clip-text text-transparent">
+        Technologies
+      </span>
+    </h1>
 
-            <p className="mt-1 text-[11] text-[#64748b]">
-              Pick one technology per category to build your ideal stack.
-            </p>
-          </div>
+    <p className="mt-1 text-[11] text-[#64748b]">
+      Pick one technology per category to build your ideal stack.
+    </p>
+  </div>
 
           {/* Technology Grid + Stack */}
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-4">
@@ -399,7 +399,7 @@ const Technologies = () => {
                       <button
                         onClick={() => addToStack(technology)}
                         disabled={added}
-                        className={`w-full rounded-md px-2 py-1.5 text-[15px] font-medium transition ${
+                        className={`w-full mt-5 rounded-md px-2 py-1.5 text-[15px] font-medium transition ${
                           added
                             ? "cursor-not-allowed bg-[#e8f7ee] text-[#16a34a]"
                             : "bg-[#111827] text-white hover:bg-[#1f2937]"
