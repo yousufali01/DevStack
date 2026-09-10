@@ -4,7 +4,7 @@ import heroImage from "../assets/banner-stack.png";
 const Hero = () => {
   return (
     <section className="w-full bg-white">
-      <div className="mb-0 mx-auto flex min-h-150 w-[90%] flex-col items-center justify-center gap-10 py-12 md:min-h-175 md:flex-row md:justify-between md:gap-12 md:py-16">
+      <div className="mb-0 mx-auto flex min-h-150 w-[86%] flex-col items-center justify-center gap-10 py-0 md:min-h-175 md:flex-row md:justify-between md:gap-12 md:py-0">
         {/* Left Content */}
         <div className="w-full max-w-145 text-center md:text-left">
           <h1 className="text-[42px] font-extrabold leading-[1.05] tracking-[-1.5px] text-[#111827] sm:text-[48px] md:text-[52px]">
@@ -39,7 +39,7 @@ const Hero = () => {
           <img
             src={heroImage}
             alt="Development Stack"
-            className="w-75 object-contain sm:w-87.5 md:w-100 lg:w-107.5"
+            className="w-125 sm:w-100 md:w-125 lg:w-150 h-auto"
           />
         </div>
       </div>
