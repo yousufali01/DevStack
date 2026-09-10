@@ -7,7 +7,8 @@ const NavBar = () => {
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-white shadow-sm">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:h-20 md:px-8">
+      <div className="mx-auto flex h-16 w-[90%] items-center justify-between px-4 md:h-20 md:px-8">
+        {/* <div className="mx-auto flex h-16 w-[calc(100%-40px)] max-w-none items-center justify-between md:h-20"></div> */}
         {/* =========================
             LEFT - Hamburger + Brand
         ========================== */}
